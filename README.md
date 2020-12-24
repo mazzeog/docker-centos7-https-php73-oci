@@ -8,5 +8,7 @@ Sarà possibile far girare un container con attivo una connessione https (defaul
  
 <p>Il repo include librerie zip Oracle per l'installazione e configurazione del client Oracle sull'imagine costruita per connessioni php73/oci8 verso db Oracle.</p>
 
+![php1](https://user-images.githubusercontent.com/11073332/103095577-592d8880-4601-11eb-8e63-7d26ebf9a3ba.PNG)
+
 
  
