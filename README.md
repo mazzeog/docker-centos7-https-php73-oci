@@ -8,6 +8,10 @@ Sarà possibile far girare un container con attivo una connessione https (defaul
  
 <p>Il repo include librerie zip Oracle per l'installazione e configurazione del client Oracle sull'imagine costruita per connessioni php73/oci8 verso db Oracle.</p>
 
+crea container da shell o powershell:    
+
+docker container run -d --name tp3  -h localhost   -p 80:443 -v $(pwd):/var/www/html  centos-php72-oci8
+
 Test:  Actions: docker build
 
 ![php1](https://user-images.githubusercontent.com/11073332/103095577-592d8880-4601-11eb-8e63-7d26ebf9a3ba.PNG)
