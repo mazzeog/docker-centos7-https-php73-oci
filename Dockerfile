@@ -27,8 +27,8 @@ COPY ca.csr /etc/pki/tls/private/ca.csr
 
 RUN sed -E -i -e 's|#DocumentRoot "/var/www/html"|DocumentRoot "/var/www/html"|' /etc/httpd/conf.d/ssl.conf && \
     sed -E -i -e  's|SSLCertificateFile /etc/pki/tls/certs/localhost.crt|SSLCertificateFile /etc/pki/tls/certs/ca.crt|g' /etc/httpd/conf.d/ssl.conf  && \
-    sed -E -i -e  's|SSLCertificateKeyFile /etc/pki/tls/private/localhost.key|SSLCertificateKeyFile /etc/pki/tls/private/ca.key|g' /etc/httpd/conf.d/ssl.conf  && \
-    sed -E -i -e  's|#ServerName www.example.com:443| ServerName localhost|g' /etc/httpd/conf.d/ssl.conf
+    sed -E -i -e  's|SSLCertificateKeyFile /etc/pki/tls/private/localhost.key|SSLCertificateKeyFile /etc/pki/tls/private/ca.key|g' /etc/httpd/conf.d/ssl.conf 
+
 
 # Copy and Install Oracle Library
 WORKDIR /app/src/tmp
