@@ -10,7 +10,7 @@ Sarà possibile far girare un container con attivo una connessione https (defaul
 
 crea container da shell o powershell:    
 
-docker container run -d --name tp3  -h localhost   -p 80:443 -v $(pwd):/var/www/html  centos-php72-oci8
+**docker container run -d --name tp3  -h localhost   -p 80:443 -v $(pwd):/var/www/html  centos-php72-oci8**
 
 Test:  Actions: docker build
 
