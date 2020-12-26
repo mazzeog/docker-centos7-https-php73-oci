@@ -13,7 +13,8 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
   yum-config-manager --enable remi-php73 && \
   yum -y install mod_ssl openssl && \
   yum -y install libaio-devel && \
-  yum -y install php-pear
+  yum -y install php-pear && \
+  yum -y install wget
 
   RUN yum -y install php php-cli php-fpm php-mysqlnd  php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-ldap php-xmlrpc php-soap 
   RUN yum -y install php-oci8 && \
@@ -32,9 +33,14 @@ RUN sed -E -i -e 's|#DocumentRoot "/var/www/html"|DocumentRoot "/var/www/html"|'
 
 # Copy and Install Oracle Library
 WORKDIR /app/src/tmp
-COPY oracle-instantclient19.9-basic-19.9.0.0.0-1.x86_64.rpm /app/src/tmp  
-COPY oracle-instantclient19.9-devel-19.9.0.0.0-1.x86_64.rpm /app/src/tmp
-COPY oracle-instantclient19.9-sqlplus-19.9.0.0.0-1.x86_64.rpm /app/src/tmp
+
+RUN wget https://download.oracle.com/otn_software/linux/instantclient/199000/oracle-instantclient19.9-basic-19.9.0.0.0-1.x86_64.rpm
+RUN wget https://download.oracle.com/otn_software/linux/instantclient/199000/oracle-instantclient19.9-devel-19.9.0.0.0-1.x86_64.rpm
+RUN wget https://download.oracle.com/otn_software/linux/instantclient/199000/oracle-instantclient19.9-sqlplus-19.9.0.0.0-1.x86_64.rpm
+
+#COPY oracle-instantclient19.9-basic-19.9.0.0.0-1.x86_64.rpm /app/src/tmp  
+#COPY oracle-instantclient19.9-devel-19.9.0.0.0-1.x86_64.rpm /app/src/tmp
+#COPY oracle-instantclient19.9-sqlplus-19.9.0.0.0-1.x86_64.rpm /app/src/tmp
 
 RUN rpm -ivh /app/src/tmp/oracle-instantclient19.9-*.rpm  && \
  echo "export ORACLE_HOME=/usr/lib/oracle/19.9/client64" >> /etc/profile  && \
