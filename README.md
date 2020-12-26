@@ -5,9 +5,8 @@
  This repo aims to build a docker image that includes a stack including os Linux centos7, php73, oracle client libraries.
 It will be possible to run a container with an active https connection (default self-signed) on httpd service and php 7.3 technologies configured with the most common libraries, such as: php php-cli php-fpm php-mysqlnd php-devel php-gd php -mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-ldap php-xmlrpc php-soap php-oci.
 
-Container from shell or powershell:
-
-
+The key and ca are generated just execute image  that I've created from here:
+https://loglevel-blog.com/how-to-create-self-signed-certificate-with-openssl-and-docker/
 
 Container da shell o powershell:    
 
