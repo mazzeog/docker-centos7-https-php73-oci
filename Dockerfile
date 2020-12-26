@@ -38,10 +38,6 @@ RUN wget https://download.oracle.com/otn_software/linux/instantclient/199000/ora
 RUN wget https://download.oracle.com/otn_software/linux/instantclient/199000/oracle-instantclient19.9-devel-19.9.0.0.0-1.x86_64.rpm
 RUN wget https://download.oracle.com/otn_software/linux/instantclient/199000/oracle-instantclient19.9-sqlplus-19.9.0.0.0-1.x86_64.rpm
 
-#COPY oracle-instantclient19.9-basic-19.9.0.0.0-1.x86_64.rpm /app/src/tmp  
-#COPY oracle-instantclient19.9-devel-19.9.0.0.0-1.x86_64.rpm /app/src/tmp
-#COPY oracle-instantclient19.9-sqlplus-19.9.0.0.0-1.x86_64.rpm /app/src/tmp
-
 RUN rpm -ivh /app/src/tmp/oracle-instantclient19.9-*.rpm  && \
  echo "export ORACLE_HOME=/usr/lib/oracle/19.9/client64" >> /etc/profile  && \
  echo "export ORACLE_BASE=/usr/lib/oracle/19.9" >> /etc/profile  && \
