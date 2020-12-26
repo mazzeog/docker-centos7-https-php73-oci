@@ -1,10 +1,12 @@
 
 # docker-centos7-https-php73-oci
 # !Important docker installato sull'host <br>
- 
-Questa repo ha come obiettivo la costruzione di un immagine docker che include uno stack che comprende os Linux centos7, php73, librerie oracle client. <br>
-Sarà possibile far girare un container con attivo una connessione https (default self-signed) su servizio httpd e tecnologie php 7.3 configurato con le librerie più comuni, quali:
- php php-cli php-fpm php-mysqlnd  php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-ldap php-xmlrpc php-soap php-oci.<br>
+
+ This repo aims to build a docker image that includes a stack including os Linux centos7, php73, oracle client libraries.
+It will be possible to run a container with an active https connection (default self-signed) on httpd service and php 7.3 technologies configured with the most common libraries, such as: php php-cli php-fpm php-mysqlnd php-devel php-gd php -mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-ldap php-xmlrpc php-soap php-oci.
+
+Container from shell or powershell:
+
 
 
 Container da shell o powershell:    
