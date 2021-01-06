@@ -10,7 +10,7 @@ https://loglevel-blog.com/how-to-create-self-signed-certificate-with-openssl-and
 
 Container da shell o powershell:    
 
-**docker container run -d --name tp3  -h localhost   -p 80:443 -v $(pwd):/var/www/html  centos-php72-oci8**
+
 
 Test:  Actions: docker build
 
